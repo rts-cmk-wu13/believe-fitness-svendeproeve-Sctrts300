@@ -1,5 +1,5 @@
 "use client";
-import "./email.css"
+
 
 
 
@@ -9,11 +9,11 @@ export default function Email() {
 
     return (
         <section>
-            <h3>Nyhedsbrev</h3>
-            <p>Få direkte besked når vi har sæsonstart eller afholder arrangementer.</p>
-            <form className="emailform">
-              <input className="emailnyhed" type="email" placeholder="Email" required />
-              <button className="emailnyhedbtn" type="submit">Tilmeld</button>
+            <h3>Sign up for our newsletter</h3>
+            <p>Sign up to receive the latest news and announcements from Believe Fitness</p>
+            <form className="flex flex-row ">
+              <input className="border-1 border-solid border-black px-8 py-5 rounded-full w-full" type="email" placeholder="Email" required />
+              <button  className=" bg-yellow-500 px-8 py-5 rounded-full" type="submit">SIGN UP</button>
             </form>
             
 

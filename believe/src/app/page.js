@@ -1,12 +1,12 @@
 import "./page.css"
-import teams from "./1.json"
+import teams from "./teamtypes/teams.json"
 import Carusel from "./components/Carousel/carusel.jsx"
 import Email from "./components/Email/email.jsx"
 import Kontakt from "./components/Kontakt/kontakt.jsx"
 import Header from "./components/Header/header"
 
 export default function Home() {
-  console.log(teams)
+  // console.log(teams)
 
   return (
     <main>

@@ -1,0 +1,11 @@
+
+.heroimg{
+    background-image: url('/assets/images/welcome.jpg');
+    background-size: cover;
+    background-position: top;
+    height: 40rem;
+    align-items: center;    
+    display: flex;  
+    flex-direction: column;
+    text-align: center;
+}

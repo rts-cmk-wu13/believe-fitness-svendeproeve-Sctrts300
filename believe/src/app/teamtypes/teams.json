@@ -1,0 +1,27 @@
+[
+    
+    {
+        "id": 1,
+        "h1" : "New Member Lounge Opens",
+        "p1" : "Believe Fitness unveils a cozy member lounge with fresh juices, recovery seating, and free Wi‑Fi. It’s the perfect spot to relax before or after your workout.",
+        "img": "http://localhost:3000/assets/images/juice.jpg"
+    },
+    {
+        "id": 2,
+        "h1" : "Early-Morning Bootcamp Returns",
+        "p1" : "Believe Fitness brings back its energizing sunrise bootcamp, inviting members to jumpstart their mornings with high-intensity workouts, structured coaching, and a supportive group atmosphere designed to boost consistency, stamina, and overall performance.",
+        "img": "http://localhost:3000/assets/images/bootcamp.jpg"
+    },
+    {
+        "id": 3,
+        "h1" : "Spring Challenge: Train for 30 Days",
+        "p1" : "Believe Fitness relaunches a motivating 30‑day challenge encouraging members to join daily workouts, track progress, and compete for prizes while building healthier habits and discipline.",
+        "img": "http://localhost:3000/assets/images/thirtydaychallenge.jpg"
+    },
+    {
+        "id": 4,
+        "h1" : "Tech Upgrade: Smart Check‑In",
+        "p1" : "The center introduces a new smart check‑in system using QR codes. It speeds up entry, reduces waiting time, and improves the overall experience for all members.",
+        "img": "http://localhost:3000/assets/images/qrcode.jpg"
+    }
+]
