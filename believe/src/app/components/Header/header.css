@@ -4,8 +4,9 @@
     background-size: cover;
     background-position: top;
     height: 40rem;
-    align-items: center;    
-    display: flex;  
+    display: flex;
     flex-direction: column;
-    text-align: center;
+    justify-content: end;
+    padding: 1.5rem;
+    
 }

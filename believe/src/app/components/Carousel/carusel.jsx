@@ -1,6 +1,7 @@
 "use client"
+import "./carusel.css"
 import { useState, useEffect } from "react"
-import { IoChevronForwardCircleOutline, IoChevronBackCircleOutline  } from "react-icons/io5";
+import { IoChevronForwardCircleOutline, IoChevronBackCircleOutline } from "react-icons/io5";
 
 export default function Carusel() {
     const [testimonials, setTestimonials] = useState([])
@@ -30,17 +31,14 @@ export default function Carusel() {
 
     return (
         <div className="carousel">
-            <div className="testimonialcard">
-                <h1>Det siger vores kunder om os</h1>
-                <section className="">
-                    <p className="text-center">{testimonials[current].content}</p>
-                    <h2 className="text-center">{testimonials[current].name}</h2>
-                    <p className="text-center">{testimonials[current].occupation}</p>
-                </section>
-            </div>
-            <div className="flex justify-center">
-            <div className="slidebtn" onClick={prevSlide}><IoChevronBackCircleOutline className="w-15 h-15 text-white"/></div>
-            <div className="slidebtn" onClick={nextSlide}><IoChevronForwardCircleOutline className="w-15 h-15 text-white"/></div>
+            <div className="flex flex-col text-center text-white gap-6 space-y-6 py-10 px-15">
+                <h2>A word from other Believers</h2>
+                <h5>{testimonials[current].text}</h5>
+                <h5 className="font-bold">{testimonials[current].name}</h5>
+                <div className="flex justify-center">
+                    <div className="slidebtn" onClick={prevSlide}><IoChevronBackCircleOutline className="w-15 h-15 text-white" /></div>
+                    <div className="slidebtn" onClick={nextSlide}><IoChevronForwardCircleOutline className="w-15 h-15 text-white" /></div>
+                </div>
             </div>
 
         </div>

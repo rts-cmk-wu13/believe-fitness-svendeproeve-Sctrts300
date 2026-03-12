@@ -1,5 +1,21 @@
 @import "tailwindcss";
 
-
+h1{
+    color: rgb(255, 200, 0);
+    font-weight: bold;
+    font-size: 3rem;
+}
+h4{
+    color: rgb(255, 200, 0);
+    font-weight: bold;
+    font-size: 4rem;
+}
+h2{
+    font-weight: bold;
+    font-size: 2rem; 
+}
+p{
+   color: rgb(79, 79, 79); 
+}
 
 

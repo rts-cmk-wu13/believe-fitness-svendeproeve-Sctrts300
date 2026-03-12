@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import { z } from "zod/v4"
-import "./kontakt.css"
 
 const contactSchema = z.object({
     name: z.string().min(2, "Name is required"),
@@ -41,21 +40,22 @@ export default function Kontakt(){
 
     return(
 
-        <div className="containerform">
-            <h1>Kontakt os</h1>
+        <div className="px-4 py-15">
+            <h2>Contact us</h2>
+            <p>Ask us anything about Believe Fitness!</p>
 
-            <form className="kontaktform" method="post" onSubmit={handleSubmit}>
+            <form className="flex flex-col gap-[10px] pt-4 pb-8 w-[90vw]" method="post" onSubmit={handleSubmit}>
 
-                <input className="input" type="text" name="name" placeholder="Navn" />
+                <input className="border-1 border-solid border-black px-8 py-5 rounded-full w-full" type="text" name="name" placeholder="Enter you name..." />
                 <p>{errors && errors?.name?.errors[0]}</p>
 
-                <input className="input" type="email" name="email" placeholder="Email" />
+                <input className="border-1 border-solid border-black px-8 py-5 rounded-full w-full" type="email" name="email" placeholder="Enter you email..." />
                 <p>{errors && errors?.email?.errors[0]}</p>
 
-                <textarea className="besked" name="besked" placeholder="Besked" />
+                <textarea className="border border-black px-8 py-5 rounded-4xl w-full h-40" name="besked" placeholder="Enter your message..." />
                 <p>{errors?.besked?.errors?.[0] || success}</p>
 
-                <button className="kontaktbtn" type="submit">Send besked</button>
+                <button className="w-full bg-yellow-500 py-5 rounded-full " type="submit">SEND MESSAGE</button>
             </form>
         </div>
     )

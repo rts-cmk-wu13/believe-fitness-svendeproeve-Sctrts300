@@ -16,42 +16,40 @@ export default function Home() {
 
       <section className="maincontent">
         <section>
-          <h1 id="voreshold">Vores holdtyper</h1>
+          <h4 id="voreshold">News</h4>
           <div className="teamtypescards">
-            <ul>
+            <ul className=" flex flex-col gap-10">
               {teams.map((team) => (
                   <li key={team.id}>
                     <h2>{team.h1}</h2>
-                    <img className="teamimg" src={team.img} alt={team.h1} />
+                    <img className=" py-5" src={team.img} alt={team.h1} />
                     <p>{team.p1}</p>
                 </li>
               ))}
             </ul>
           </div>
-
           <section className="emailisss">
             <Email />
           </section>
-
         </section>
       </section>
 
-      <section className="carusel">
-        <section className="caruselbg">
-          
+      <section className="carusel"> 
           <Carusel />
-        </section>
       </section>
 
       <section className="maincontent">
         <section>
           <Kontakt />
         </section>
-
-        <section className="center_section">
-          <img src="/assets/images/Group_18.png" alt="" />
-          <p className="textalign_center">Pulsen 8 . 4000 Roskilde Tlf. 3540 4550</p>
-</section>
+        <hr className="w-20 h-1 bg-black border-none"></hr>
+        <section className="flex flex-col text-center">
+          <h1>Believe Fitness</h1>
+          <h2>Train like a pro</h2>
+          <p>Rabalderstræde 48 ‧ 4000 Roskilde</p>
+          <p>hello@believe-fitness.com</p>
+          
+        </section>
       </section>
     </main>
   );
