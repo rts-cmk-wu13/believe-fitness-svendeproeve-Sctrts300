@@ -16,9 +16,9 @@ export default function Navbar() {
 
                     <a className="" href="/">Home</a>
                     <a className="" href="/Classes">Popular classes</a>
-                    <a className="" href="/">nah</a>
-                    <a className="" href="/profile">My Profile</a>
-                    <a className="" href="/">Log Out</a>
+                    <a className="text-gray-200" href="/">Search</a>
+                    <a className="text-gray-200" href="/profile">My Profile</a>
+                    <a className="text-gray-200" href="/">Log Out</a>
 
                 </div>
             
