@@ -1,43 +1,33 @@
+
 import "./actId.css"
 import { cookies } from "next/headers"
-import { console } from "inspector"
 import ActivityCard from "../../components/ActivityCard"
-import { getClassById } from "@/app/dal/fetch"
+import Link from "next/link";
+import { IoMdList } from "react-icons/io";
+
 
 
 
 export default async function ActivitiesPage({ params }) {
     const { id } = await params
-    const data = await getClassById()
-    const activity = await response.json()
     const cookieStore = await cookies()
     const userId = cookieStore.get("userId").value
     const token = cookieStore.get("accessToken").value
-    
-    console.log(activity)
 
-    const isEnrolled = activity.users.some(user => user.id === Number(userId))
+    const res = await fetch(`http://localhost:4000/api/v1/classes/${id}`)
 
-    console.log(isEnrolled)
-
-    const handleLeave = async () => {
-        await fetch(`http://localhost:4000/api/v1/users/${userId}/classes/${activity.id}`, {
-            method: "DELETE",
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        })
-
+    if (!res.ok) {
+        throw new Error(`Failed to fetch activities with id ${id}`)
     }
-
-    const handleJoin = async () => {
-        console.log("join")
-    }
+ 
+    const activity = await res.json()
 
     return (
         <>
-            <ActivityCard activity={activity} isEnrolled={isEnrolled} userId={userId} token={token}/>
-            <Navbar />
+        <Link className="absolute top-5 right-5 text-white text-5xl" href="/navbar"><IoMdList /></Link>
+            <ActivityCard activity={activity} userId={userId} token={token}/>
+
+            
         </>
     )
 }

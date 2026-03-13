@@ -38,6 +38,8 @@ export default function ActivityCard ({activity, isEnrolled, userId, token}) {
                 </section>
                 <section>
                 <h2>Trainer</h2>
+                <img src={activity.trainerImage} alt={activity.trainerName} className="trainer-image"/>
+                <p>{activity.trainerName}</p>
                 <section>
                     
                 </section>

@@ -9,10 +9,10 @@ export async function getAllClasses() {
     return res.json()
 }
 
-export async function getClassById(id) {
-    const res = await fetch(`http://localhost:4000/api/v1/classes/${id}`)
+export async function getActivityById(id) {
+    const res = await fetch(`http://localhost:4000/api/v1/activities/${id}`)
     if (!res.ok) {
-        throw new Error(`Failed to fetch classes with id ${id}`)
+        throw new Error(`Failed to fetch activities with id ${id}`)
     }
     return res.json()
 }
