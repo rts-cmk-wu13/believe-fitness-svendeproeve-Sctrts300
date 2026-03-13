@@ -1,6 +1,5 @@
 import { cookies } from "next/headers"
 import Link from "next/link"
-import Navbar from "../components/Navbar/Navbar"
 import AdminPanel from "../components/ProfileCards/admincards"
 import "./profile.css"
 
@@ -29,10 +28,7 @@ const response = await fetch(`http://localhost:4000/api/v1/users/${userId}`, {
                     <p>{userData.role}</p>
                 </section>
             </div>
-
             <AdminPanel />
-            
-            <Navbar />
         </div>
     )
 }

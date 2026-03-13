@@ -55,7 +55,7 @@ export default function Kontakt(){
                 <textarea className="border border-black px-8 py-5 rounded-4xl w-full h-40" name="besked" placeholder="Enter your message..." />
                 <p>{errors?.besked?.errors?.[0] || success}</p>
 
-                <button className="w-full bg-yellow-500 py-5 rounded-full " type="submit">SEND MESSAGE</button>
+                <button className="w-full bg-yellow-500 py-5 rounded-full" type="submit">SEND MESSAGE</button>
             </form>
         </div>
     )

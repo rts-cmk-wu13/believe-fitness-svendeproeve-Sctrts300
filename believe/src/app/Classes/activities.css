@@ -1,0 +1,48 @@
+
+.scroll{
+    display: flex;
+    scroll-snap-type: x mandatory;
+    overflow-x: auto;
+    gap: 15px;
+}
+
+.activitycard {
+    height: 40rem;
+    width: 100%;
+    background-size: cover;
+    border-radius: 30px 30px 0 30px;
+    margin-bottom: 16px;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    
+}
+
+
+.activitycard__content {
+    background: rgb(255, 200, 0);
+    padding: 16px;
+    border-radius: 0 30px 0 30px;
+    width: 25rem;
+    height: 6rem;
+}
+
+.activitycardhori {
+    height: 25rem;
+    width: 100%;
+    background-size: cover;
+    border-radius: 30px 30px 0 30px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+.activitycardhori__content {
+    background: rgb(255, 200, 0);
+    padding: 16px;
+    border-radius: 0 30px 0 30px;
+    width: 25rem;
+    height: 6rem;
+}

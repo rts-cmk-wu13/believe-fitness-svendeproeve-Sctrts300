@@ -1,0 +1,25 @@
+
+.SearchForm {
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    margin-top: 2rem;
+    width: 90%;
+    border-radius: 10px;
+}
+
+.SearchForm:focus-within {
+    background-color: #2f5c70;
+}
+
+.Searchinput {
+    flex: 1;
+    border: none;
+    padding: 10px;
+    color: white;
+}
+
+.Searchbtn {
+    height: 2.5rem;
+    padding-right: 0.5rem;
+}

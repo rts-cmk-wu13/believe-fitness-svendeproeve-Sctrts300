@@ -1,32 +1,28 @@
 
-
 import "./actId.css"
-import Navbar from "../../components/Navbar/Navbar"
 import { cookies } from "next/headers"
-import { console } from "inspector"
 import ActivityCard from "../../components/ActivityCard"
-import { getAllActivities } from "@/dal/fetch"
+import { getActivityById } from "@/app/dal/fetch"
+import { IoMdList } from "react-icons/io";
+import Link from "next/link";
 
 
 
-export default async function ActivitiesPage({ params }) {
+export default async function ClassesPage({ params }) {
     const { id } = await params
-    const data = await getAllActivities()
-    const activity = await response.json()
+    const activity = await getActivityById(id)
     const cookieStore = await cookies()
     const userId = cookieStore.get("userId").value
     const token = cookieStore.get("accessToken").value
-
-
-
-    console.log(activity)
+    
+  
 
     const isEnrolled = activity.users.some(user => user.id === Number(userId))
 
     console.log(isEnrolled)
 
     const handleLeave = async () => {
-        await fetch(`http://localhost:4000/api/v1/users/${userId}/activities/${activity.id}`, {
+        await fetch(`http://localhost:4000/api/v1/users/${userId}/classes/${activity.id}`, {
             method: "DELETE",
             headers: {
                 Authorization: `Bearer ${token}`
@@ -41,8 +37,9 @@ export default async function ActivitiesPage({ params }) {
 
     return (
         <>
+            <Link className="absolute top-5 right-5 text-white text-5xl" href="/navbar"><IoMdList /></Link>
             <ActivityCard activity={activity} isEnrolled={isEnrolled} userId={userId} token={token}/>
-            <Navbar />
+            
         </>
     )
 }
