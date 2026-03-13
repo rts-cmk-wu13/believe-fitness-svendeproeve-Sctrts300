@@ -1,61 +1,61 @@
 import { cookies } from "next/headers"
 import Link from "next/link"
 import "./card.css"
+import { FaEdit } from "react-icons/fa";
+import { MdDelete } from "react-icons/md";
 
 
 
-
-export default async function AdminPanel() 
-{
+export default async function AdminPanel() {
     const cookieStore = await cookies()
     const userId = cookieStore.get("userId")?.value
     const accessToken = cookieStore.get("accessToken")?.value
-    let activities = []
+    let classes = []
 
     const response = await fetch(`http://localhost:4000/api/v1/users/${userId}`, {
-    headers: {
-        "Authorization": `Bearer ${accessToken}`
-    }
-})
+        headers: {
+            "Authorization": `Bearer ${accessToken}`
+        }
+    })
 
     const userData = await response.json()
 
-console.log(userData)
+    console.log(userData)
 
-if (userData.role === 'instructor')  {
+    if (userData.role === 'instructor') {
 
-    console.log(userData.id)
+        console.log(userData.id)
 
-    const activitiesResponse = await fetch(`http://localhost:4000/api/v1/classes`)
-    const activitiesData = await activitiesResponse.json()
+        const classesResponse = await fetch(`http://localhost:4000/api/v1/classes`)
+        const classesData = await classesResponse.json()
 
-    console.log(activitiesData)
-    
-    activities = activitiesData.filter(activity => activity.instructorId === userData.id)
-}
-console.log(activities)
+        console.log(classesData)
+
+        classes = classesData.filter(classes => classes.instructorId === userData.id)
+    }
+    console.log(classes)
 
 
     return userData.role === 'instructor' ? (
         <div className="team-card">
             <section className="uhaaaaa">
-                <h2 className="minebitches">Mine hold</h2> 
+                <h2 className="minebitches">Mine hold</h2>
                 <button><Link className="plusman" href={`Oprethold`}> + </Link></button>
             </section>
-            <ul>
-                {classes.map(activity => (
-                    <div className="rowcard" key={activity.id}>
-                        <h3>{activity.name}</h3>
-                        <p>{activity.weekday} {activity.time}</p>
+            <ul className="flex flex-col gap-10">
+                {classes.map(classes => (
+                    <div className="rowcard" key={classes.id}>
+                        <h3>{classes.name}</h3>
+                        <p>{classes.weekday} {classes.time}</p>
                         <section className="cardinfo">
-                            <p>Max. deltagere: {activity.maxParticipants}</p>
-                            <p>Tilmeldte: {activity.users.lenght}</p>
+                            <p>Max. deltagere: {classes.maxParticipants}</p>
+                            <p>Tilmeldte: {classes.users.length}</p>
                         </section>
                         <section className="cardbuttons">
-                            <button><Link href={`/profile/hold/${activity.id}`}>Deltagerliste</Link></button>
+                            <button><Link href={`/profile/hold/${classes.id}`}>Deltagerliste</Link></button>
                             <section className="editdelete">
-                                <button><Link href={`/oprethold`}><img src="/assets/images/rediger.png" alt="Rediger" /></Link></button>
-                                <button> <img src="/assets/images/delete.png" alt="Slet" /></button>
+                                <button><Link href={`/oprethold`}><FaEdit /></Link></button>
+                                <button> <MdDelete /></button>
                             </section>
                         </section>
                     </div>
@@ -69,13 +69,13 @@ console.log(activities)
                 <h1 className="minebitches">Tilmeldte hold</h1>
             </section>
 
-            <ul>
-                {userData.classes.map(activity => (
-                    <div className="rowcard" key={activity.id}>
-                        <h3>{activity.name}</h3>
-                        <p>{activity.weekday} {activity.time}</p>
-                        <button className="vishold"><Link href={`/activities/${activity.id}`}>Vis hold</Link></button>
-                    </div>  
+            <ul className="flex flex-col gap-10">
+                {userData.classes.map(classes => (
+                    <div className="rowcard" key={classes.id}>
+                        <h3>{classes.name}</h3>
+                        <p>{classes.weekday} {classes.time}</p>
+                        <button className="vishold"><Link href={`/classes/${classes.id}`}>Vis hold</Link></button>
+                    </div>
                 ))}
             </ul>
         </div>

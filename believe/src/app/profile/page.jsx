@@ -1,10 +1,8 @@
 import { cookies } from "next/headers"
-import Link from "next/link"
 import AdminPanel from "../components/ProfileCards/admincards"
 import "./profile.css"
-import { IoMdPerson } from "react-icons/io";
-
-
+import Link from "next/link"
+import { IoMdList } from "react-icons/io";
 
 export default async function Profile() {
 const cookieStore = await cookies()
@@ -21,14 +19,16 @@ const response = await fetch(`http://localhost:4000/api/v1/users/${userId}`, {
     
     return (
         <div className="profile-page">
+            <Link className="absolute top-5 right-5 text-gray-500 text-5xl" href="/navbar"><IoMdList /></Link>
             <h1>Min profil</h1>
             <div className="profile-container">
-                <div> <IoMdPerson /></div>
+                <img className="this-bish" src="/assets/images/Vectorman.png" alt="Profile picture" />
                 <section className="profile-info">
-                    <p>{userData.userFirstname} {userData.userLastname}</p>
+                    <p> {userData.trainerName} {userData.firstname} {userData.lastname}</p>
                     <p>{userData.role}</p>
                 </section>
             </div>
+
             <AdminPanel />
         </div>
     )
