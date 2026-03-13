@@ -2,6 +2,7 @@ import { cookies } from "next/headers"
 import Link from "next/link"
 import AdminPanel from "../components/ProfileCards/admincards"
 import "./profile.css"
+import { IoMdPerson } from "react-icons/io";
 
 
 
@@ -22,9 +23,9 @@ const response = await fetch(`http://localhost:4000/api/v1/users/${userId}`, {
         <div className="profile-page">
             <h1>Min profil</h1>
             <div className="profile-container">
-                <img className="this-bish" src="/assets/images/Vectorman.png" alt="Profile picture" />
+                <div> <IoMdPerson /></div>
                 <section className="profile-info">
-                    <p>{userData.firstname} {userData.lastname}</p>
+                    <p>{userData.userFirstname} {userData.userLastname}</p>
                     <p>{userData.role}</p>
                 </section>
             </div>

@@ -1,21 +1,20 @@
-
 import "./actId.css"
 import { cookies } from "next/headers"
+import { console } from "inspector"
 import ActivityCard from "../../components/ActivityCard"
-import { getActivityById } from "@/app/dal/fetch"
-import { IoMdList } from "react-icons/io";
-import Link from "next/link";
+import { getClassById } from "@/app/dal/fetch"
 
 
 
-export default async function ClassesPage({ params }) {
+export default async function ActivitiesPage({ params }) {
     const { id } = await params
-    const activity = await getActivityById(id)
+    const data = await getClassById()
+    const activity = await response.json()
     const cookieStore = await cookies()
     const userId = cookieStore.get("userId").value
     const token = cookieStore.get("accessToken").value
     
-  
+    console.log(activity)
 
     const isEnrolled = activity.users.some(user => user.id === Number(userId))
 
@@ -37,9 +36,8 @@ export default async function ClassesPage({ params }) {
 
     return (
         <>
-            <Link className="absolute top-5 right-5 text-white text-5xl" href="/navbar"><IoMdList /></Link>
             <ActivityCard activity={activity} isEnrolled={isEnrolled} userId={userId} token={token}/>
-            
+            <Navbar />
         </>
     )
 }

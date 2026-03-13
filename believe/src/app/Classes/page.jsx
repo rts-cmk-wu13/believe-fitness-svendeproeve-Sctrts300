@@ -11,6 +11,7 @@ export default async function ClassesPage({ params }) {
     const randomClass = classes[Math.floor(Math.random() * classes.length)]
 
     console.log(classes)
+    
 
     return (
         <div className="flex flex-col items-stretch px-8">

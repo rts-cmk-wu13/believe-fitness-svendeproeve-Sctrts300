@@ -6,7 +6,7 @@ export default function ActivityCard ({activity, isEnrolled, userId, token}) {
     const router = useRouter()
     
     const handleLeave = async () => {
-            await fetch(`http://localhost:4000/api/v1/users/${userId}/activities/${activity.id}`, {
+            await fetch(`http://localhost:4000/api/v1/users/${userId}/classes/${activity.id}`, {
                 method: "DELETE",
                 headers: {
                     Authorization: `Bearer ${token}`
@@ -16,7 +16,7 @@ export default function ActivityCard ({activity, isEnrolled, userId, token}) {
         }
     
         const handleJoin = async () => {
-            await fetch(`http://localhost:4000/api/v1/users/${userId}/activities/${activity.id}`, {
+            await fetch(`http://localhost:4000/api/v1/users/${userId}/classes/${activity.id}`, {
                 method: "POST",
                 headers: {
                     Authorization: `Bearer ${token}`
@@ -39,8 +39,7 @@ export default function ActivityCard ({activity, isEnrolled, userId, token}) {
                 <section>
                 <h2>Trainer</h2>
                 <section>
-                    <div></div>
-                    <h4>{}</h4>
+                    
                 </section>
                     { isEnrolled
                         ? <button onClick={handleLeave} className="w-full bg-yellow-500 py-5 rounded-full font-bold text-xl">Leave</button>

@@ -9,7 +9,7 @@ import { RxCross2 } from "react-icons/rx";
 export default function Navbar() {
     const router = useRouter();
     return (
-        <div className="">
+        <div>
             <button className="absolute top-5 right-5 text-gray-500 text-5xl"  onClick={router.back}><RxCross2/></button>
             <button aria-label=""></button>
                 <div  className=" flex flex-col gap-10 py-20 text-center text-3xl">

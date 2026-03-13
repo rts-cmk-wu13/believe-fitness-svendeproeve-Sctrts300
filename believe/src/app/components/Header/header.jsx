@@ -11,8 +11,8 @@ export default function Header() {
             <h1>Welcome to</h1>
             <h1>Belive Fitness</h1>
             <section className="flex gap-4">
-                <button className=" bg-yellow-500 px-8 py-5 rounded-full" >CLASSES</button>
-                <button className=" bg-yellow-500 px-8 py-5 rounded-full">LOG IN</button>
+                <Link href="/Classes"><button className=" bg-yellow-500 px-8 py-5 rounded-full">CLASSES</button></Link>
+                <Link href="/login"><button className=" bg-yellow-500 px-8 py-5 rounded-full">LOG IN</button></Link>
             </section>
         </section>
         </>

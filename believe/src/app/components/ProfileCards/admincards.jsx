@@ -1,7 +1,9 @@
 import { cookies } from "next/headers"
 import Link from "next/link"
 import "./card.css"
-import OpretHold from "../../Oprethold/page"
+
+
+
 
 export default async function AdminPanel() 
 {
@@ -24,7 +26,7 @@ if (userData.role === 'instructor')  {
 
     console.log(userData.id)
 
-    const activitiesResponse = await fetch(`http://localhost:4000/api/v1/activities`)
+    const activitiesResponse = await fetch(`http://localhost:4000/api/v1/classes`)
     const activitiesData = await activitiesResponse.json()
 
     console.log(activitiesData)
@@ -41,7 +43,7 @@ console.log(activities)
                 <button><Link className="plusman" href={`Oprethold`}> + </Link></button>
             </section>
             <ul>
-                {activities.map(activity => (
+                {classes.map(activity => (
                     <div className="rowcard" key={activity.id}>
                         <h3>{activity.name}</h3>
                         <p>{activity.weekday} {activity.time}</p>
@@ -68,7 +70,7 @@ console.log(activities)
             </section>
 
             <ul>
-                {userData.activities.map(activity => (
+                {userData.classes.map(activity => (
                     <div className="rowcard" key={activity.id}>
                         <h3>{activity.name}</h3>
                         <p>{activity.weekday} {activity.time}</p>
