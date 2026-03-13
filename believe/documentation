@@ -1,3 +1,25 @@
 
+Mit project
+Fitness website
+_________________________________
+-Installationer
+
+Next
++react
++tailwind
++eslint
+
+React icons
+
+Zod
+_________________________________
+
+Classes page
+
+Classe page henter classes fra et API og viser dem på siden.
+Jeg bruger Math til at lave en randomiser til det store card.
+
+const randomClass = classes[Math.floor(Math.random() * classes.length)]
+
 
 
